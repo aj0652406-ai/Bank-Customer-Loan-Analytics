@@ -123,3 +123,4 @@ Bank-Customer-Loan-Analytics/
     ├── 01_database_schema.sql
     ├── 02_project_queries.sql
     └── bank_analytics_full.sql
+
