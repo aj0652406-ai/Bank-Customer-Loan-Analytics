@@ -33,78 +33,7 @@ The main relationships are:
 •⁠  ⁠Branches.BranchID → Accounts.BranchID
 •⁠  ⁠Loans.LoanID → LoanPayments.LoanID
 
-## ER Diagram
 
-⁠ mermaid
-erDiagram
-
-    CUSTOMERS ||--o{ ACCOUNTS : owns
-    CUSTOMERS ||--o{ LOANS : takes
-    BRANCHES ||--o{ ACCOUNTS : contains
-    ACCOUNTS ||--o{ TRANSACTIONS : has
-    LOANS ||--o{ LOANPAYMENTS : receives
-
-    CUSTOMERS {
-        int CustomerID PK
-        varchar FirstName
-        varchar LastName
-        varchar Gender
-        int Age
-        varchar City
-        varchar State
-        varchar Phone
-        varchar Email
-        varchar Occupation
-        decimal AnnualIncome
-        date JoinDate
-    }
-
-    ACCOUNTS {
-        int AccountID PK
-        int CustomerID FK
-        varchar AccountType
-        decimal Balance
-        date OpenDate
-        int BranchID FK
-        varchar Status
-    }
-
-    TRANSACTIONS {
-        int TransactionID PK
-        int AccountID FK
-        date TransactionDate
-        varchar TransactionType
-        decimal Amount
-        varchar PaymentMode
-    }
-
-    LOANS {
-        int LoanID PK
-        int CustomerID FK
-        varchar LoanType
-        decimal LoanAmount
-        decimal InterestRate
-        date LoanDate
-        int TenureMonths
-        varchar LoanStatus
-    }
-
-    LOANPAYMENTS {
-        int PaymentID PK
-        int LoanID FK
-        date PaymentDate
-        decimal PaymentAmount
-        varchar PaymentStatus
-    }
-
-    BRANCHES {
-        int BranchID PK
-        varchar BranchName
-        varchar City
-        varchar State
-        varchar ManagerName
-    }
- ⁠
 
 ## SQL Skills Demonstrated
 
@@ -186,6 +115,76 @@ The project also answers advanced questions such as:
 •⁠  ⁠Which customers have taken every available loan type?
 
 ## Project Files
+
+## ER Diagram
+
+⁠'''mermaid
+erDiagram
+    CUSTOMERS ||--o{ ACCOUNTS : owns
+    CUSTOMERS ||--o{ LOANS : takes
+    BRANCHES ||--o{ ACCOUNTS : contains
+    ACCOUNTS ||--o{ TRANSACTIONS : has
+    LOANS ||--o{ LOANPAYMENTS : receives
+
+    CUSTOMERS {
+        int CustomerID PK
+        varchar FirstName
+        varchar LastName
+        varchar Gender
+        int Age
+        varchar City
+        varchar State
+        varchar Occupation
+        decimal AnnualIncome
+        date JoinDate
+    }
+
+    ACCOUNTS {
+        int AccountID PK
+        int CustomerID FK
+        varchar AccountType
+        decimal Balance
+        date OpenDate
+        int BranchID FK
+        varchar Status
+    }
+
+    TRANSACTIONS {
+        int TransactionID PK
+        int AccountID FK
+        date TransactionDate
+        varchar TransactionType
+        decimal Amount
+        varchar PaymentMode
+    }
+
+    LOANS {
+        int LoanID PK
+        int CustomerID FK
+        varchar LoanType
+        decimal LoanAmount
+        decimal InterestRate
+        date LoanDate
+        int TenureMonths
+        varchar LoanStatus
+    }
+
+    LOANPAYMENTS {
+        int PaymentID PK
+        int LoanID FK
+        date PaymentDate
+        decimal PaymentAmount
+        varchar PaymentStatus
+    }
+
+    BRANCHES {
+        int BranchID PK
+        varchar BranchName
+        varchar City
+        varchar State
+        varchar ManagerName
+    }
+ ⁠'''
 
 ```text
 Bank-Customer-Loan-Analytics/
