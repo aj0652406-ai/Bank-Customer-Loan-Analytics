@@ -118,7 +118,7 @@ The project also answers advanced questions such as:
 
 ## ER Diagram
 
-⁠'''mermaid
+⁠```mermaid
 erDiagram
     CUSTOMERS ||--o{ ACCOUNTS : owns
     CUSTOMERS ||--o{ LOANS : takes
@@ -184,7 +184,7 @@ erDiagram
         varchar State
         varchar ManagerName
     }
- ⁠'''
+ ⁠```
 
 ```text
 Bank-Customer-Loan-Analytics/
