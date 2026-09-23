@@ -184,15 +184,21 @@ erDiagram
         varchar State
         varchar ManagerName
     }
- ⁠```
+``` ⁠
 
-```text
+## Project Files
+
+⁠ text
 Bank-Customer-Loan-Analytics/
 │
 ├── README.md
-│
+├── docs/
+│   └── business_report.md
 └── sql/
     ├── 01_database_schema.sql
     ├── 02_project_queries.sql
     └── bank_analytics_full.sql
+ ⁠
+
+
 
